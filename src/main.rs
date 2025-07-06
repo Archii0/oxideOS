@@ -1,5 +1,8 @@
 #![no_std]  
 #![no_main]
+#![feature(custom_test_frameworks)]
+#![test_runner(crate::test_runner)]
+#![reexport_test_harness_main = "test_main"]
 
 mod vga_buffer;
 
@@ -11,11 +14,10 @@ fn panic(info: &PanicInfo) -> ! {
     loop {}
 }
 
-#![reexport_test_harness_main = "test_main"]
 
 #[unsafe(no_mangle)]
 pub extern "C" fn _start() -> ! {
-    println!("Hello World{}", "!");
+    println!("Hallo{}", "!");
 
     #[cfg(test)]
     test_main();
@@ -23,8 +25,6 @@ pub extern "C" fn _start() -> ! {
     loop {}
 }
 
-#![feature(custom_test_frameworks)]
-#![test_number(create::test_runner)]
 
 #[cfg(test)]
 pub fn test_runner(tests: &[&dyn Fn()]) {

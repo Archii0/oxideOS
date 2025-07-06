@@ -1,6 +1,7 @@
 [unstable]
 build-std-features = ["compiler-builtins-mem"]
 build-std = ["core", "compiler_builtins"]
+panic-abort-tests = true
 
 [build]
 target = "x86_64_os.json"
@@ -22,7 +23,3 @@ args = [
     "qemu-system-x86_64",
     "-drive", "format=raw,file=target/x86_64_os/debug/bootimage-oxideOS.bin"
 ]
-
-
-
-
