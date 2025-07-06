@@ -18,7 +18,7 @@ dependencies = [
 ]
 
 [[package]]
-name = "rust_os"
+name = "oxideOS"
 version = "0.1.0"
 dependencies = [
  "bootloader",
