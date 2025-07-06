@@ -69,7 +69,7 @@ Run QEMU manually (or via `run.sh`):
 ```bash
 GTK_PATH=/usr/lib/x86_64-linux-gnu/gtk-3.0 \
 GTK_MODULES="" \
-qemu-system-x86_64 -drive format=raw,file=target/x86_64_os/debug/bootimage-oxideOS.bin
+qemu-system-x86_64 -drive format=raw,file=target/x86_64_os/debug/bootimage-oxide_os.bin
 ```
 
 **Note:** To avoid GTK-related errors with QEMU when running through `bootimage runner`, make sure your environment variables are set correctly (see below).
