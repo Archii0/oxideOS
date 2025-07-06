@@ -121,7 +121,7 @@ impl fmt::Write for Writer {
         self.write_string(s);
         Ok(())
     }
-}
+}lazy_static!
 
 lazy_static! {
     pub static ref WRITER: Mutex<Writer> = Mutex::new(Writer {
@@ -132,7 +132,7 @@ lazy_static! {
 }
 
 #[macro_export]
-macro_rules! print {
+     print {
     ($($arg:tt)*) => ($crate::vga_buffer::_print(format_args!($($arg)*)));
 }
 
